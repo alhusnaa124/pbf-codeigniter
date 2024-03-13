@@ -275,8 +275,8 @@ Ini akan meluncurkan server dan sekarang Anda dapat melihat aplikasi Anda di bro
   ```
 7. Buat Pengontrol Berita
    Buat pengontrol baru di app/Controllers/News.php
-   ```shell
-       <?php
+    ```shell
+    <?php
     namespace App\Controllers;
     use App\Models\NewsModel;
     class News extends BaseController
@@ -295,7 +295,7 @@ Ini akan meluncurkan server dan sekarang Anda dapat melihat aplikasi Anda di bro
             $data['news'] = $model->getNews($slug);
         }
     }
-  ```
+    ```
 8. Berita Lengkap::index() Metode
    ```shell
    <?php
@@ -392,13 +392,10 @@ Ini akan meluncurkan server dan sekarang Anda dapat melihat aplikasi Anda di bro
 ## Models, Views, and Controllers
 MVC adalah Setiap aplikasi memerlukan pengaturan kode yang baik untuk pemeliharaan, dan CodeIgniter menggunakan pola Model, View, Controller (MVC) untuk memisahkan data, presentasi, dan logika aplikasi
 **Model** mengelola data aplikasi dan membantu menegakkan aturan bisnis khusus yang mungkin diperlukan aplikasi.
-
 **Tampilan** adalah file sederhana, dengan sedikit atau tanpa logika, yang menampilkan informasi kepada pengguna.
-
 **Pengontrol** bertindak sebagai kode perekat, menyusun data bolak-balik antara tampilan (atau pengguna yang melihatnya) dan penyimpanan data.
 Komponen
-**View**
-Tampilan dalam CodeIgniter adalah file HTML yang sederhana dengan sedikit kode PHP untuk menampilkan konten variabel atau mengulang item dalam tabel. Data untuk tampilan diteruskan dari pengontrol sebagai variabel yang ditampilkan dengan panggilan echo. Anda juga dapat menyertakan tampilan lain dalam tampilan, seperti header atau footer, untuk memudahkan penggunaan umum. Meskipun umumnya disimpan di direktori app/Views, aturan praktis yang baik adalah membuat direktori baru untuk setiap pengontrol dan menamai file tampilan berdasarkan nama metode, yang membuatnya mudah ditemukan. Meskipun tidak ada aturan baku untuk organisasi file tampilan, penting untuk mengatur mereka dengan cara yang mudah dipahami dan diakses.
+**View** Tampilan dalam CodeIgniter adalah file HTML yang sederhana dengan sedikit kode PHP untuk menampilkan konten variabel atau mengulang item dalam tabel. Data untuk tampilan diteruskan dari pengontrol sebagai variabel yang ditampilkan dengan panggilan echo. Anda juga dapat menyertakan tampilan lain dalam tampilan, seperti header atau footer, untuk memudahkan penggunaan umum. Meskipun umumnya disimpan di direktori app/Views, aturan praktis yang baik adalah membuat direktori baru untuk setiap pengontrol dan menamai file tampilan berdasarkan nama metode, yang membuatnya mudah ditemukan. Meskipun tidak ada aturan baku untuk organisasi file tampilan, penting untuk mengatur mereka dengan cara yang mudah dipahami dan diakses.
 **Model**
 Tugas model adalah mengelola satu jenis data untuk aplikasi, termasuk menerapkan aturan bisnis pada data dari database dan menangani penyimpanan serta pengambilan data. Aturan bisnis, seperti normalisasi atau pemformatan data, diterapkan dalam model untuk mencegah pengulangan kode di berbagai pengontrol. Model biasanya disimpan di direktori app/Models dengan kemungkinan penggunaan namespace untuk pengelompokan.
 **Controller**
@@ -514,14 +511,14 @@ Pengontrol dalam aplikasi web adalah bagian dari pola desain MVC yang bertanggun
 2. Helpers
    Mendefinisikan array file pembantu sebagai properti kelas. Setiap kali pengontrol dimuat, file helper ini akan secara otomatis dimuat ke dalam memori sehingga Anda dapat menggunakan metodenya di mana saja di dalam pengontrol:
    ```shell
-   <?php
-  
-  namespace App\Controllers;
-  
-  class MyController extends BaseController
-  {
-      protected $helpers = ['url', 'form'];
-  }
+     <?php
+    
+    namespace App\Controllers;
+    
+    class MyController extends BaseController
+    {
+        protected $helpers = ['url', 'form'];
+    }
   ```
 3. forceHTTPS
   Metode praktis untuk memaksa suatu metode diakses melalui HTTPS tersedia di semua pengontrol:
@@ -572,16 +569,16 @@ if (! $this->request->isSecure()) {
    ```shell
    <?php
 
-  namespace App\Controllers;
-  
-  class Helloworld extends BaseController
-  {
-      public function getIndex()
-      {
-          return 'Hello World!';
-      }
-  }
-  ```
+    namespace App\Controllers;
+    
+    class Helloworld extends BaseController
+    {
+        public function getIndex()
+        {
+            return 'Hello World!';
+        }
+    }
+    ```
 6. kemudian jalankan
 7. Metode Biasa
   tambahkan method getComment di dalam file helloworld.php
@@ -669,27 +666,27 @@ $routes->get('blog', [Blog::class, 'index']);
 ```
 3. memuat banyak tampilan
    ```shell
-  <?php
-  
-  namespace App\Controllers;
-  
-  use CodeIgniter\Controller;
-  
-  class Page extends Controller
-  {
-      public function index()
-      {
-          $data = [
-              'page_title' => 'Your title',
-          ];
-  
-          return view('header')
-              . view('menu')
-              . view('content', $data)
-              . view('footer');
-      }
-  }
-  ```
+    <?php
+    
+    namespace App\Controllers;
+    
+    use CodeIgniter\Controller;
+    
+    class Page extends Controller
+    {
+        public function index()
+        {
+            $data = [
+                'page_title' => 'Your title',
+            ];
+    
+            return view('header')
+                . view('menu')
+                . view('content', $data)
+                . view('footer');
+        }
+    }
+    ```
 4. Menambahkan Data Dinamis ke Tampilan
   Data diteruskan dari pengontrol ke tampilan melalui array di parameter kedua fungsi view(). Berikut ini contohnya:
   ```shell
@@ -725,9 +722,8 @@ $routes->get('blog', [Blog::class, 'index']);
       'title'   => 'My title',
       'heading' => 'My Heading',
       'message' => 'My Message',
-  ];
-  
-  return view('blog_view', $data, ['saveData' => false]);
+    ];
+    return view('blog_view', $data, ['saveData' => false]);
   ```
 6. Membuat Loop
    Berikut ini contoh sederhananya. Tambahkan ini ke pengontrol Anda:
