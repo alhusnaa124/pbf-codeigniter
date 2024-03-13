@@ -156,8 +156,8 @@ Ini akan meluncurkan server dan sekarang Anda dapat melihat aplikasi Anda di bro
       {
         // ...
       }
-    }
-    ```
+     }
+     ```
     Anda telah membuat kelas bernama Pages, dengan view()metode yang menerima satu argumen bernama $page. Ia juga memiliki index()metode, sama dengan pengontrol default yang ditemukan di app/Controllers/Home.php ; metode itu menampilkan halaman selamat datang CodeIgniter.
   3. Buat Tampilan
     - Buat header di app/Views/templates/header.php dan tambahkan kode berikut:
@@ -199,7 +199,7 @@ Ini akan meluncurkan server dan sekarang Anda dapat melihat aplikasi Anda di bro
             . view('templates/footer');
       }  
     }
-   ```
+    ```
   Jalankan untuk mengecek hasil yang sudah di buat dengan code:
   ```shell
   php spark serve
@@ -215,15 +215,15 @@ Ini akan meluncurkan server dan sekarang Anda dapat melihat aplikasi Anda di bro
       body TEXT NOT NULL,
       PRIMARY KEY (id),
       UNIQUE slug (slug)
-  );
-  ```
+    );
+   ```
 2. Isikan Data dengan perintah :
-```shell
-    INSERT INTO news VALUES
-  (1,'Elvis sighted','elvis-sighted','Elvis was sighted at the Podunk internet cafe. It looked like he was writing a CodeIgniter app.'),
-  (2,'Say it isn\'t so!','say-it-isnt-so','Scientists conclude that some programmers have a sense of humor.'),
-  (3,'Caffeination, Yes!','caffeination-yes','World\'s largest coffee shop open onsite nested coffee shop for staff only.');
-```
+  ```shell
+      INSERT INTO news VALUES
+    (1,'Elvis sighted','elvis-sighted','Elvis was sighted at the Podunk internet cafe. It looked like he was writing a CodeIgniter app.'),
+    (2,'Say it isn\'t so!','say-it-isnt-so','Scientists conclude that some programmers have a sense of humor.'),
+    (3,'Caffeination, Yes!','caffeination-yes','World\'s largest coffee shop open onsite nested coffee shop for staff only.');
+  ```
 3. Hubungkan ke Basis Data Anda
    - buka visual studio code atau teks editor lainnya
    - kemudian cari file .env , jika masih env maka rename menjadi .env
